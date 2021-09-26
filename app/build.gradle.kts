@@ -68,5 +68,4 @@ dependencies {
     testImplementation(DependenciesManager.testingImplementation)
     androidTestImplementation(DependenciesManager.androidTestImplementation)
     implementation(DependenciesManager.roomDB)
-    kapt(DependenciesManager.roomDBKPT)
 }
