@@ -18,7 +18,6 @@ buildscript {
         classpath(BuildClassesConfig.NAVIGATION_SAFE_ARGS)
         classpath(BuildClassesConfig.HILT_GRADLE_PLUGIN)
         classpath(BuildClassesConfig.GOOGLE_SERVICES)
-        classpath(BuildClassesConfig.FIREBASE_CRASHLYTICS_GRADLE)
     }
 }
 

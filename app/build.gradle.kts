@@ -3,7 +3,7 @@ plugins {
     kotlin(BuildPluginsConfig.kotlinAndroid)
     kotlin(BuildPluginsConfig.kotlinKapt)
     id(BuildPluginsConfig.kotlinParcelize)
-//    id(BuildPluginsConfig.androidHilt)
+    id(BuildPluginsConfig.androidHilt)
     id(BuildPluginsConfig.navigationSafeArgs)
 
     // Internal Script plugins

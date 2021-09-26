@@ -98,10 +98,12 @@ android {
                     if (properties.containsKey("BASE_URL")) {
                         buildConfigString(
                             "BASE_URL",
-                            decodeBase64(properties["BASE_URL_DEV"].toString())
+                            decodeBase64(properties["BASE_URL"].toString())
                         )
+                    }
+                    if (properties.containsKey("API_ACCESS_KEY")) {
                         buildConfigString(
-                            "API_KEY",properties["API_ACCESS_KEY"].toString()
+                            "API_KEY", properties["API_ACCESS_KEY"].toString()
                         )
                     }
                 }

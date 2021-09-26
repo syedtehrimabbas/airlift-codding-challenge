@@ -1,7 +1,6 @@
 package com.airlift.networking.apiclient.base
 
 import com.airlift.networking.apiclient.base.error.ApiError
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import org.json.JSONException
 import org.json.JSONObject
 import retrofit2.Response
@@ -26,7 +25,6 @@ abstract class BaseRepository : IRepository {
             return RetroApiResponse.Error(detectError(response))
 
         } catch (exception: MalformedJsonException1) {
-            FirebaseCrashlytics.getInstance().recordException(exception)
             return RetroApiResponse.Error(
                 ApiError(
                     MALFORMED_JSON_EXCEPTION_CODE,
@@ -34,7 +32,6 @@ abstract class BaseRepository : IRepository {
                 )
             )
         } catch (exception: Exception) {
-            FirebaseCrashlytics.getInstance().recordException(exception)
             return RetroApiResponse.Error(
                 ApiError(
                     getDefaultCode(),
@@ -94,7 +91,6 @@ abstract class BaseRepository : IRepository {
                         return ServerError(0, error)
                     }
                 } catch (e: JSONException) {
-                    FirebaseCrashlytics.getInstance().recordException(e)
                     ServerError(code, defaultErrorMessage)
                 }
             }

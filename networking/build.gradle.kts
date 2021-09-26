@@ -31,7 +31,6 @@ dependencies {
     implementation(DependenciesManager.kotlinImplementation)
     implementation(DependenciesManager.networkImplementation)
     implementation(DependenciesManager.hiltImplementation)
-    implementation(FireBaseDependencies.FIREBASE_CRASHLYTICS)
     kapt(DependenciesManager.hiltKapt)
 //    implementation(DependenciesManager.hiltKapt)
 }
