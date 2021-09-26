@@ -106,6 +106,12 @@ android {
                             "API_KEY", properties["API_ACCESS_KEY"].toString()
                         )
                     }
+
+                    if (properties.containsKey("DEFAULT_CURRENCY")) {
+                        buildConfigString(
+                            "DEFAULT_CURRENCY", properties["DEFAULT_CURRENCY"].toString()
+                        )
+                    }
                 }
             } catch (e: Exception) {
                 System.err.println("The BASE_URL_DEV in apikeys.properties file is malformed")

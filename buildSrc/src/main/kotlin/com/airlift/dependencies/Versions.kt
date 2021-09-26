@@ -28,25 +28,6 @@
         const val GSON = "2.8.7"
     }
 
-    object FireBaseVersions {
-        //firebase
-        const val AUTH = "19.0.0"
-        const val AUTH_PHONE = "17.5.1"
-        const val ANALYTICS = "18.0.0"
-        const val MESSAGING_FCM = "22.0.0"
-        const val PLAY_SERVICES_PLACES = "17.0.0"
-        const val PLAY_LIB_PLACE = "2.4.0"
-        const val PLAY_SERVICES_MAP = "17.0.1"
-        const val FIREBASE_CRASHLYTICS = "18.0.1"
-        const val FIREBASE_CRASH = "16.2.1"
-
-        const val crashlytics = "17.2.1"
-        const val crashlyticsSdk = "2.10.1"
-        const val crashlyticsClassPath = "2.2.1"
-        const val FIREBASE_ML_KIT = "16.2.1"
-        const val FIREBASE_ML_TEXT_RECOGNITION = "16.1.1"
-    }
-
     object KotlinVersions {
         const val STANDARD_LIBRARY = "1.5.10"
         const val COROUTINE_VERSION = "1.4.1"
@@ -54,23 +35,7 @@
 
     object ThirdPartyVersions {
         const val SDP = "1.0.6"
-        const val DATE_PICKET = "4.2.3"
-        const val LIB_PHONE = "8.12.10"
-        const val IMAGE_COMPRESSION = "3.0.1"
-        const val IMAGE_CROPPER = "2.8.0"
         const val INLINE_ACTIVITY_RESULT = "1.0.4"
-        const val MICHAEL_ROCKS = "8.12.10"
-        const val BOTTOM_SHEETS_CORE = "1.2.0"
-        const val BOTTOM_SHEETS_KTX = "1.2.0"
-        const val BOTTOM_SHEETS = "1.2.0"
-        const val APP_CENTER_SDK = "4.1.0"
-    }
-
-    object SDKVersions {
-        const val MIN_SDK_VERSION = 23
-        const val COMPILE_SDK_VERSION = 30
-        const val TARGET_SDK_VERSION = COMPILE_SDK_VERSION
-        const val BUILD_TOOLS_VERSION = "30.0.3"
     }
 
     object BuildPluginsVersions {
@@ -99,4 +64,8 @@
         const val MOCKITO_INLINE = "3.7.0"
         const val MOCKITO_CORE = "3.7.0"
         const val JUPITER = "5.7.0"
+    }
+
+    object RoomDbDependenciesVersion {
+        const val ROOM_VERSION = "2.3.0"
     }

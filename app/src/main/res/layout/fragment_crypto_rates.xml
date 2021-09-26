@@ -19,18 +19,81 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/_10sdp"
         tools:context=".ui.splash.SplashActivity">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Crypto Rates will show here"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_20ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="amountET,currencyLabel,currencyAS,spacer,ratesLabel,rvCurrencyRates"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/amountET"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/input_bg"
+            android:gravity="center"
+            android:hint="@string/text_currency_format"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLength="9"
+            android:onTextChanged="@{viewModel.onTextChanged}" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/currencyLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="1"
+            android:text="@string/text_currency_choose_label"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            tools:text="@string/text_currency_choose_label" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/currencyAS"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onItemSelected="@{(parent,view,pos,id)->viewModel.onSelectItem(parent,view,pos,id)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amountET" />
+
+        <View
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ratesLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="1"
+            android:text="@string/rates"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            tools:text="@string/rates" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCurrencyRates"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:dividerHeight="2dp"
+            app:adapter="@{viewState.currencyRatesAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currencyAS"
+            app:spanCount="2"
+            tools:listitem="@layout/item_currency_rate" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

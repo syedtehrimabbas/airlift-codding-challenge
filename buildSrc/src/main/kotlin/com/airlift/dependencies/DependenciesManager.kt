@@ -51,7 +51,7 @@ object DependenciesManager {
         add(NavigationDependencies.NAVIGATION_FRAGMENT_KTX)
         add(NavigationDependencies.NAVIGATION_UI_KTX)
     }
-    
+
     val thirdPartyImplementation = arrayListOf<String>().apply {
         add(ThirdPartyDependencies.SDP)
         add(ThirdPartyDependencies.SSP)
@@ -91,6 +91,14 @@ object DependenciesManager {
         add(TestDependencies.MOCKITO_CORE)
         add(TestDependencies.MOCKITO_INLINE)
 
+    }
+    val roomDB = arrayListOf<String>().apply {
+        add(RoomDbDependencies.RUNTIME)
+        add(RoomDbDependencies.KTX)
+    }
+
+    val roomDBKPT = arrayListOf<String>().apply {
+        add(RoomDbDependencies.KTP)
     }
 }
 

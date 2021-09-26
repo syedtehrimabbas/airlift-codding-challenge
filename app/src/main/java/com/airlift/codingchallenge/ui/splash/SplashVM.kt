@@ -1,7 +1,6 @@
 package com.airlift.codingchallenge.ui.splash
 
 import android.os.Bundle
-import android.os.Handler
 import com.airlift.codingchallenge.base.viewmodel.HiltBaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -17,7 +16,7 @@ class SplashVM @Inject constructor(
 
     override fun onFirsTimeUiCreate(bundle: Bundle?) {
         launch {
-            delay(3000)
+            delay(5000)
             viewState.proceedNext.postValue(true)
         }
     }

@@ -22,6 +22,17 @@ android {
         versionCode = AppConfig.VERSION_CODE
         versionName = AppConfig.VERSION_NAME
         testInstrumentationRunner = AppConfig.androidTestInstrumentation
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true",
+                    "room.expandProjection" to "true"
+                )
+            }
+        }
+
     }
     viewBinding {
         android.buildFeatures.viewBinding = true
@@ -56,4 +67,6 @@ dependencies {
     kapt(DependenciesManager.networkKapt)
     testImplementation(DependenciesManager.testingImplementation)
     androidTestImplementation(DependenciesManager.androidTestImplementation)
+    implementation(DependenciesManager.roomDB)
+    kapt(DependenciesManager.roomDBKPT)
 }

@@ -95,15 +95,6 @@ ThirdPartyDependencies {
     const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
 }
 
-object FireBaseDependencies {
-
-    //Firebase Crashlytics
-    const val FIREBASE_CRASHLYTICS =
-        "com.google.firebase:firebase-crashlytics-ktx:${FireBaseVersions.FIREBASE_CRASHLYTICS}"
-    const val FIREBASE_CRASH =
-        "com.google.firebase:firebase-crash:${FireBaseVersions.FIREBASE_CRASH}"
-}
-
 object RXDependencies {
     // RX Java
     const val RX_ANDROID = "io.reactivex.rxjava2:rxandroid:2.1.1"
@@ -144,4 +135,9 @@ object TestDependencies {
         "org.junit.jupiter:junit-jupiter-params:${TestDependenciesVersions.JUPITER}"
 }
 
+object RoomDbDependencies {
+    const val RUNTIME = "androidx.room:room-runtime:${RoomDbDependenciesVersion.ROOM_VERSION}"
+    const val KTP = "androidx.room:room-compiler:${RoomDbDependenciesVersion.ROOM_VERSION}"
+    const val KTX = "androidx.room:room-ktx:${RoomDbDependenciesVersion.ROOM_VERSION}"
+}
 

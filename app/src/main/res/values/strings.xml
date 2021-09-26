@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">AirliftCodingChallenge</string>
     <string name="crypto_rates">Crypto Live Rates</string>
+    <string name="refresh">Refresh</string>
+    <string name="live_rates_not_available">You can sync only once in 30 minutes</string>
+    <string name="text_currency_format">##.##</string>
+    <string name="text_currency_choose_label">Choose currency to convert</string>
+    <string name="rates">Rates</string>
 </resources>
