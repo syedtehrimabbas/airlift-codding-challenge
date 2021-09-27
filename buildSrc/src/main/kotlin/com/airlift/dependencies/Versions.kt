@@ -36,6 +36,7 @@
     object ThirdPartyVersions {
         const val SDP = "1.0.6"
         const val INLINE_ACTIVITY_RESULT = "1.0.4"
+        const val SHIMMER = "0.1.0@aar"
     }
 
     object BuildPluginsVersions {

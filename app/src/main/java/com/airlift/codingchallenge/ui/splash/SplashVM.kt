@@ -16,7 +16,7 @@ class SplashVM @Inject constructor(
 
     override fun onFirsTimeUiCreate(bundle: Bundle?) {
         launch {
-            delay(5000)
+            delay(2000)
             viewState.proceedNext.postValue(true)
         }
     }

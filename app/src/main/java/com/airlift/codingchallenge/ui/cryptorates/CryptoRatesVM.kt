@@ -26,9 +26,7 @@ class CryptoRatesVM @Inject constructor(
         MutableLiveData<SingleEvent<Any>>()
     override val errorMessage: LiveData<SingleEvent<Any>> get() = errorMessagePrivat
 
-    override fun handleOnClick(id: Int) {
-
-    }
+    override fun handleOnClick(id: Int) {}
 
     override fun onFirsTimeUiCreate(bundle: Bundle?) {
         loadCurrencies()
@@ -36,17 +34,19 @@ class CryptoRatesVM @Inject constructor(
     }
 
     override fun getCryptoRates() {
+        viewState.shimmerVisibility.value = true
         launch {
             when (val response = layerApi.fetchLiveRates(
                 BuildConfig.API_KEY
             )) {
                 is RetroApiResponse.Success -> {
-                    loading(false)
+                    viewState.shimmerVisibility.postValue(false)
                     viewState.ratesLiveDataPrivate.postValue(response.data)
                 }
                 is RetroApiResponse.Error -> {
-                    alert(response.error.message)
-                    loading(false)
+                    viewState.shimmerVisibility.postValue(false)
+                    errorMessagePrivat.value =
+                        SingleEvent(response.error.message)
                 }
             }
         }
@@ -58,12 +58,9 @@ class CryptoRatesVM @Inject constructor(
                 BuildConfig.API_KEY
             )) {
                 is RetroApiResponse.Success -> {
-                    loading(false)
                     viewState.currenciesLiveDataPrivate.postValue(response.data)
                 }
                 is RetroApiResponse.Error -> {
-                    loading(false)
-                    alert(response.error.message)
                     errorMessagePrivat.value =
                         SingleEvent(response.error.message)
                 }

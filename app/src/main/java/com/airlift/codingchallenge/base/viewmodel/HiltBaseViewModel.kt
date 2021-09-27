@@ -8,7 +8,6 @@ import androidx.lifecycle.OnLifecycleEvent
 import com.airlift.codingchallenge.base.clickevents.SingleClickEvent
 import com.airlift.codingchallenge.base.interfaces.IBase
 import com.airlift.codingchallenge.base.interfaces.OnClickHandler
-import com.airlift.codingchallenge.base.state.UIState
 import kotlinx.coroutines.cancel
 
 /**
@@ -88,13 +87,6 @@ abstract class HiltBaseViewModel<VS : IBase.State> : BaseCoroutineViewModel(),
      */
     open fun handleOnClick(id: Int) {}
 
-    override fun loading(isLoading: Boolean, message: String) {
-        viewState.uiState.postValue(UIState.Loading(isLoading, message))
-    }
-
-    override fun alert(message: String) {
-        viewState.uiState.postValue(UIState.Alert(message))
-    }
 }
 
 

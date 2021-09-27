@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/currencyTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_weight="1"
+        android:background="@color/background" />
+
+    <View
+        android:id="@+id/rateTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_weight="1"
+        android:background="@color/background"
+        android:gravity="end" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

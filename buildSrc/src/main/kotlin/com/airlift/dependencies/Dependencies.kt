@@ -93,6 +93,7 @@ ThirdPartyDependencies {
     const val INLINE_ACTIVITY_RESULT =
         "com.github.florent37:inline-activity-result-kotlin:${ThirdPartyVersions.INLINE_ACTIVITY_RESULT}"
     const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
+    const val SHIMMER = "com.facebook.shimmer:shimmer:${ThirdPartyVersions.SHIMMER}"
 }
 
 object RXDependencies {

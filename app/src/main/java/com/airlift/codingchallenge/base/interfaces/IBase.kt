@@ -3,7 +3,6 @@ package com.airlift.codingchallenge.base.interfaces
 import android.os.Bundle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
-import com.airlift.codingchallenge.base.state.UIState
 
 interface IBase {
     interface View<VM : ViewModel<*>> {
@@ -47,23 +46,16 @@ interface IBase {
 
     interface ViewModel<VS : State> : ILifecycle {
         val viewState: VS
-        fun loading(isLoading: Boolean, message: String = "")
-        fun alert(message: String = "")
     }
 
     interface State : LifecycleObserver {
         var toolbarTitle: MutableLiveData<String>
         var toolsBarVisibility: MutableLiveData<Boolean>
-        var uiState: MutableLiveData<UIState>
         fun onStart()
         fun onStop()
         fun destroy()
         fun onCreate()
         fun resume()
         fun pause()
-
-//        val toolBarClickEvent: SingleClickEvent
-//        fun getString(resourceId: Int): String
-//        fun getString(resourceId: String): String
     }
 }

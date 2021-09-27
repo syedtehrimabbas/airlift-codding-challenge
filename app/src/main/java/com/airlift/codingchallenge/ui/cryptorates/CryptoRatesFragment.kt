@@ -47,6 +47,7 @@ class CryptoRatesFragment :
         bindCurrencyAdapter(currencyResponse)
 
     private fun handleRates(ratesResponse: CoinlayerResponse) {
+        mViewDataBinding.shimmerViewContainer.stopShimmerAnimation()
         viewState.currencyRatesAdapter.value?.setList(ratesResponse.rates.toRatesList())
     }
 
@@ -58,10 +59,17 @@ class CryptoRatesFragment :
         }
     }
 
+    private fun shimmerVisibility(isVisible: Boolean) {
+        if (isVisible)
+            mViewDataBinding.shimmerViewContainer.startShimmerAnimation()
+        else
+            mViewDataBinding.shimmerViewContainer.stopShimmerAnimation()
+    }
 
     private fun startObservers() {
         observe(viewState.currenciesLiveData, ::handleCurrency)
         observe(viewState.ratesLiveData, ::handleRates)
+        observe(viewState.shimmerVisibility, ::shimmerVisibility)
         observeSnackBarMessages(viewModel.errorMessage)
     }
 

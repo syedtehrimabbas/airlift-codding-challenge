@@ -28,5 +28,6 @@ interface ICryptoRates {
         val ratesLiveData: LiveData<CoinlayerResponse>
         var selectedCurrency: String
         var amount: Double
+        var shimmerVisibility: MutableLiveData<Boolean>
     }
 }

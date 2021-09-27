@@ -20,4 +20,5 @@ class CryptoRatesState @Inject constructor() : BaseState(), ICryptoRates.State {
     override val ratesLiveData: LiveData<CoinlayerResponse> = ratesLiveDataPrivate
     override var amount: Double = 1.0
     override var selectedCurrency: String = ""
+    override var shimmerVisibility: MutableLiveData<Boolean> = MutableLiveData(true)
 }

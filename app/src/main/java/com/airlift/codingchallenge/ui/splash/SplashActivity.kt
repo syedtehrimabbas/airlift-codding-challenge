@@ -8,6 +8,7 @@ import com.airlift.codingchallenge.R
 import com.airlift.codingchallenge.base.activity.BaseBindingViewModelActivity
 import com.airlift.codingchallenge.databinding.ActivitySplashBinding
 import com.airlift.codingchallenge.ui.main.MainActivity
+import com.airlift.codingchallenge.utils.observe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,14 +25,13 @@ class SplashActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewState.proceedNext.observe(
-            this,
-            { moveNext() }
-        )
+        observe(viewState.proceedNext, ::moveNext)
     }
 
-    private fun moveNext() {
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
+    private fun moveNext(isSuccess: Boolean) {
+        if (isSuccess) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 }

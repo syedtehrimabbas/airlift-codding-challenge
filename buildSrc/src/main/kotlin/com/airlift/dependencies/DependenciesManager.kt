@@ -56,6 +56,7 @@ object DependenciesManager {
         add(ThirdPartyDependencies.SDP)
         add(ThirdPartyDependencies.SSP)
         add(ThirdPartyDependencies.INLINE_ACTIVITY_RESULT)
+        add(ThirdPartyDependencies.SHIMMER)
     }
     val rXImplementation = arrayListOf<String>().apply {
         add(RXDependencies.RX_ANDROID)

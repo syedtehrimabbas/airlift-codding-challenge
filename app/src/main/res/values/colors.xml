@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#c9c8d8</color>
     <color name="transparent">#00000000</color>
+    <color name="background">#dddddd</color>
 </resources>
