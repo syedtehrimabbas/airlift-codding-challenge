@@ -103,7 +103,7 @@ class CryptoRatesVM @Inject constructor(
         val sourceRate = amount.div(rate?.rate ?: 0.01)
         return actualRates.map {
             CurrencyRate(
-                "$selectedCurrency → ${it.currencyCode}",
+                it.currencyCode,
                 (sourceRate.times(it.rate).formattedAmount())
             )
         }

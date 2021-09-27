@@ -24,4 +24,27 @@
         <item name="font">@font/roboto_regular</item>
     </style>
 
+    <style name="Airlift.App.Widget.ImageView" parent="Theme.AirliftCodingChallenge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="shapeAppearance.App.CircleImageView.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Airlift.App.Widget.ImageView.Circle.Medium" parent="Airlift.App.Widget.ImageView">
+        <item name="android:layout_width">@dimen/_42sdp</item>
+        <item name="android:layout_height">@dimen/_42sdp</item>
+        <item name="shapeAppearance">@style/shapeAppearance.App.CircleImageView.MediumComponent
+        </item>
+    </style>
+
+    <style name="Yap.App.Widget.ImageView.Circle.Large" parent="Airlift.App.Widget.ImageView.Circle.Medium">
+        <item name="android:layout_width">@dimen/_40sdp</item>
+        <item name="android:layout_height">@dimen/_40sdp</item>
+    </style>
+
+
 </resources>

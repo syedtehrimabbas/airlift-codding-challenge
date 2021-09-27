@@ -28,23 +28,39 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                style="@style/Yap.App.Widget.ImageView.Circle.Large"
+                imageEndPoint="@{currency}"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/image_bg" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/currencyTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center_vertical"
+                android:padding="@dimen/_3sdp"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="@{currency}"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="USD → BTC" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/rateTV"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/rate_bg"
                 android:gravity="end"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_3sdp"
                 android:text="@{String.valueOf(rate)}"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="1.00" />
