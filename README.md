@@ -4,7 +4,7 @@ I have use modular approach.
 
 # Modules
 - App
-- buildSrc (DLS)
+- buildSrc (DSL)
 - Networking
 
 # App Includes
